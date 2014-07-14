@@ -1,0 +1,356 @@
+/* Base de la page d'accueil */
+
+#home{
+    height: 100%;
+    background: #f4f5f7;
+}
+
+#home-profil{
+    float: left;
+    width: 270px;
+    background: #e7e3e0;
+}
+
+#home-opt{
+    background: #e8e2e2;
+    float: right;
+    width: 250px;
+    min-height: 600px;
+}
+
+#home-ct{
+    margin-left: 280px;
+    margin-right: 260px;
+    padding-top: 10px;
+    min-width: 500px;
+}
+
+/* Fin de la base de la page d'accueil */
+
+#home-profil #profil-box{
+    margin: 20px;
+}
+
+#profil-box-head{
+    height: auto;
+}
+
+#home-profil #profil-box-avatar{
+    float: left;
+}
+
+#home-profil #profil-box-avatar img.profil-avatar{
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+
+}
+
+#home-profil #profil-box-infos-opt img.profil-ico{
+    width: 18px;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+
+#home-profil #profil-box-infos{
+    margin-left: 70px;
+    padding-top: 7px;
+    margin-bottom: 20px;
+}
+
+#profil-box-infos h3.username{
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 2px
+}
+
+#profil-box-infos p.username{
+    margin-bottom: 10px;
+    color: #b8b4b1;
+}
+
+#profil-box-message{
+    margin-top: 30px;
+}
+
+#profil-box-infos-opt{
+}
+
+#profil-box-infos-opt span.opt{
+    color: #504c4b;
+    margin-right: 10px;
+}
+
+#profil-box-post{
+    margin: 20px 20px 0 0;
+}
+
+#profil-box-post input[type="text"].profil-post{
+    border: 1px solid #b8b5b4;
+    width: 100%;
+    padding: 2px 5px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+
+#profil-box-post input[type="submit"].profil-sub{
+    background: #333333;
+    border: 1px solid #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+
+#profil-box-social{
+    margin-top: 30px;
+}
+
+#profil-box-social ul.social-list{
+}
+
+#profil-box-social li.list{
+    width: 200px;
+    margin-bottom: 4px;
+}
+
+#profil-box-social span.answer{
+    text-align: right;
+}
+
+#profil-box-social img.social{
+    height: 16px;
+    margin-bottom: -3px;
+}
+
+/* FIN DE LA PARTIE DE DROITE GAUCHE
+   CONCERNANT LE PROFIL UTILISATEUR
+*/
+
+#content-header{
+    background: #FFFFFF;
+    width: 100%;
+    display:table;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 20px;
+}
+
+#font-home{
+    padding: 10px 0px 20px 0;
+    float: left;
+    width: 60%;
+}
+
+.achievement-box{
+    float: right;
+    width: 35%;
+    margin: 0;
+}
+
+h3#create-ach-title{
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+label.create{
+    display: block;
+}
+
+textarea#qck-area{
+    height: 40px;
+    padding: 5px;
+    background: #f4f5f7 ;
+    border: 1px solid #e6e6e6;
+    width: 100%;
+    border-left: 0;
+    resize: none;
+    padding: 10px 0px 0 10px;
+}
+
+input[type="text"].create-ach{
+    background: #f4f5f7 ;
+    border: 1px solid #e6e6e6;
+    width: 100%;
+    border-left: 0;
+    padding: 5px 0px 5px 10px;
+}
+
+select.qck-sel{
+    background: #f4f5f7 ;
+    border: 1px solid #b8b4b1;
+    height: 26px;
+    width: 120px;
+    font-weight: bolder;
+    margin-left: 5px;
+}
+
+input[type="submit"]#qck-sub{
+    float: right;
+    background: #f06c57 ;
+    border: 1px solid #b8b4b1;
+    padding: 5px 16px;
+    border-radius: 2px;
+    color: #FFFFFF;
+    margin-right: -10px;
+    text-shadow: 1px 1px 1px #333;
+    font-weight: bolder;
+}
+
+hr.create{
+    margin: 5px 0;
+    border: 1px solid #e6e6e6;
+    padding-right: 20px;
+}
+
+
+.achievement-box-img{
+    padding: 5px;
+    line-height: 2em;
+    background: url('../images/bg_menu.gif');
+}
+
+.achievement-box-img img.logo{
+    float: left;
+    height: 24px;
+    margin: 0px 10px 0 0px;
+}
+
+.achievement-box-img  h4{
+    font-weight: bold;
+}
+
+/* Fin de la partie superieur du contenu
+    de la page d'accueil
+*/
+
+#content-fil{
+    width: 100%;
+}
+
+.fil-actu{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.fil-actu-av{
+    width: 80px;
+    float: left;
+    text-align: center;
+}
+
+.fil-actu-av img.fil-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+p.points{
+    font-size: 0.9em;
+    font-style: italic;
+    color: #ccc;
+}
+
+.fil-actu-ct{
+    margin-left: 80px;
+    padding: 15px;
+    background: #FFFFFF;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    padding-bottom: 20px;
+}
+
+.fil-actu-ct p.infos{
+    margin-bottom: 10px;
+}
+
+.fil-actu-ct p.options{
+    float: right;
+    color: #aacd4e;
+    font-weight: bold;
+}
+
+.fil-actu-ct span.red{
+    color: red;
+}
+
+.fil-actu-ct p.actu{
+    font-weight: bold;
+    line-height: 1.5em;
+    margin-right: 50px;
+}
+.fil-actu-ct img.ico{
+    margin: 0 5px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.fil-actu-ct img.icostart{
+    margin: 0 0px 0 0;
+    height: 20px;
+    vertical-align: middle;
+}
+
+img.fil-img-ach{
+    position: absolute;
+    right: 2px;
+    width: 50px;
+}
+
+
+/* Fin de la partie droite du contenu
+    de la page d'accueil
+    Les suggestions
+*/
+
+
+#option-box{
+    margin: 20px;
+    text-align: justify;
+}
+
+#more-people{
+    margin-bottom: 20px;
+}
+
+.more-friends{
+    background: #FDFDFD;
+    padding: 4px 4px;
+    border: 1px solid #FFF;
+    border-style: inset;
+    margin-bottom: 4px;
+
+}
+
+#option-box h3.more-title{
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 1em;
+    text-shadow: 1px 1px 1px #FFF;
+}
+
+.more-friends h4{
+    margin-left: 50px;
+    font-family: bold;
+}
+
+.more-friends p.desc{
+    margin-left: 50px;
+    font-size: 0.9em;
+}
+
+
+.more-friends img.more-avatar{
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+
+.more-achievement{
+
+}
+
+#more-ach-title{
+
+}

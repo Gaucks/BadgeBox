@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome BadgeBox{% endblock %}</title>
+    {# Importation des stylesheets #}
+    {% block stylesheets %}
+        {% stylesheets filter='cssrewrite'
+        'bundles/badgebox/css/reset.css'
+        'bundles/badgebox/css/style.css'
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+<div id="site">
+    {% block header %} {% render(controller('BadgeBoxBundle:Site:header')) %} {% endblock %}
+
+    <div id="content">{% block content %}{% endblock %}</div>
+
+    {% block javascripts %}{% endblock %}
+</div>
+</body>
+</html>

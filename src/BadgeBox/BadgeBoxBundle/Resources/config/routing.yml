@@ -1,0 +1,14 @@
+#Accueil du site
+badge_box_homepage:
+    path:     /
+    defaults: { _controller: BadgeBoxBundle:Site:index }
+
+#Mode Offline du site pour les maintenanances
+badge_box_offline:
+    path:     /offline
+    defaults: { _controller: BadgeBoxBundle:Site:offline }
+
+#Page d'accueil une fois connecté
+badge_box_home:
+    path:     /home
+    defaults: { _controller: BadgeBoxBundle:Site:home }

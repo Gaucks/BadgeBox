@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'raleway';
+    src: url('/typo/raleway/Raleway-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background: #333333;
+    font-family: 'raleway', "Lucida Grande", Helvetica, Verdana, Arial, 'sans-serif';
+}
+
+#off{
+
+}
+
+#off-head{
+    text-align: center;
+    height: 230px;
+}
+
+#off-head h1#site-title{
+    font-size: 4em;
+    color: #f06c57;
+    margin-top: 30px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#off-head span#white-title{
+    color: #FFFFFF;
+    font-style: oblique;
+
+}
+
+
+#off-ct{
+    position: relative;
+    background-color: #ffffff;
+    border: 3px dotted #dbdbdb;
+    border-left: 0;
+    border-right: 0;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+
+#phone{
+    position: absolute;
+    left: 100px;
+    top: -150px;
+}
+
+#off-foot{
+
+}
+
+#off-foot-ct{
+    width: 600px;
+    margin: 0 auto;
+}
+
+#off-foot--date{
+    text-align: center;
+}
+
+#foot-ret{
+    margin-bottom: 30px;
+}
+
+#foot-ret p.retour{
+    color: #f06c57;
+}
+
+.date{
+    width: 20%;
+    text-align: center;
+    font-size: 4em;
+    margin-right: 10px;
+    display: inline-block;
+    color: #dbdbdb;
+    text-shadow: 1px 1px 1px #000000;
+}
+.date p.day{
+    color: inherit;
+    font-size: 0.5em;
+    text-shadow: 1px 1px 1px #000;
+}

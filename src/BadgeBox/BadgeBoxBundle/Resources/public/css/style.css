@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'raleway';
+    src: url('/typo/raleway/Raleway-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background: #f4f5f7;
+    font-family: 'raleway' "Lucida Grande", Helvetica, Verdana, Arial, 'sans-serif';
+    font-size: 11px;
+    line-height: 1.2em;
+}
+
+h1{ font-size: 1.4em }
+h2{ font-size: 1.4em }
+h3{ font-size: 1.2em }
+h4{ font-size: 1em }
+
+*:focus{
+    outline: none;
+}
+.clear{ clear: both; }
+
+#site{
+    height: 100%;
+}
+
+#header{
+    width: auto;
+    background: #333;
+    border: 1px solid;
+    border-bottom: #f06c57;
+    padding: 7px 0;
+}
+
+#header-box{ margin: 0 20px; }
+
+    #header-box-ct{
+        float: left;
+    }
+
+    #header-box-ct h1#title{
+        font-family: 'raleway', "Lucida Grande", Helvetica, Verdana, Arial, 'sans-serif';
+        margin-top: 2px;
+        color: #e57663;
+    }
+
+    #header-box-ct span#white-title{
+        font-style: oblique;
+        color: #FFF;
+    }
+
+    #header-box #connect{
+        color: #FFFFFF;
+        width: 400px;
+        float: right;
+        text-align: right;
+    }
+
+    #header-box #connect img#avatar{
+        border-radius: 10px;
+        height: 20px;
+        vertical-align: middle;
+    }
+
+#underheader{
+    background: #f06c57;
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
+}
+
+#underheader-box{ max-width: 1400px; margin: 0 auto; text-align: center; }
+
+#flash-success{ background: #aacd4e; margin: -5px 0; padding: 7px 0; color: #333333; }
+#flash-error{ background: red; margin: -5px 0; padding: 7px 0; color: #FFF; }
+
+#content{
+    margin: 0 auto;
+}
+
+input::-webkit-input-placeholder {
+    color: #999;
+    font-style: italic
+
+}
+input::-moz-placeholder {
+    color: #999;
+    font-style: italic
+
+}
+input:-moz-placeholder {   /* Older versions of Firefox */
+    color: #999;
+    font-style: italic
+
+}
+input:-ms-input-placeholder {
+    color: #999;
+    font-style: italic
+}
+textarea::-webkit-input-placeholder {
+    color: #999;
+    font-style: italic
+}
+textarea::-moz-placeholder {
+    color: #999;
+    font-style: italic
+}
+textarea:-moz-placeholder {   /* Older versions of Firefox */
+    color: #999;
+    font-style: italic
+}
+textarea:-ms-input-placeholder {
+    color: #999;
+    font-style: italic
+}

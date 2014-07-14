@@ -1,0 +1,17 @@
+<div id="header">
+    <div id="header-box">
+       <div id="header-box-ct"> <h1 id="title">Badge<span id="white-title">Box</span></h1> </div>
+        <div id="connect"><img src="{{ asset('bundles/badgebox/images/logo.jpg') }}" alt="avatar" id="avatar"> John Doe junior</div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id="underheader">
+        <div id="underheader-box">
+            ￼{% for flashMessage in app.session.flashbag.get('success') %}
+                <div id="flash-success">{{ flashMessage }}</div>
+              {% endfor %}
+            {% for flashMessage in app.session.flashbag.get('error') %}
+                <div id="flash-error">{{ flashMessage }}</div>
+            {% endfor %}
+        </div>
+</div>

@@ -1,0 +1,12 @@
+{% extends('BadgeBoxBundle:Site:layout.html.twig') %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='cssrewrite''bundles/badgebox/css/home.css'%}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block content %}
+    {% include('BadgeBoxBundle:Site:home_content.html.twig') %}
+{% endblock %}

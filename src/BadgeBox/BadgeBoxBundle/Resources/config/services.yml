@@ -1,0 +1,7 @@
+parameters:
+#    badge_box.example.class: BadgeBox\BadgeBoxBundle\Example
+
+services:
+#    badge_box.example:
+#        class: %badge_box.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

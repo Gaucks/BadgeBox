@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}BadgeBox est Offline :({% endblock %}</title>
+
+{% block stylesheets %}
+    {% stylesheets filter='cssrewrite' 'bundles/badgebox/css/reset.css' 'bundles/badgebox/css/offline.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+    {% endstylesheets %}
+{% endblock stylesheets %}
+    
+</head>
+<body>
+{% block header %} {% endblock %}
+
+{% block content %}
+    <div id="off">
+        <div id="off-head">
+            <h1 id="site-title">Badge<span id="white-title">Box</span></h1>
+        </div>
+
+        <div id="off-ct">
+            <div id="phone"><img src="{{ asset('bundles/badgebox/images/iphone6.png') }}" alt="Logo"/></div>
+            <h1 id="offline"> \ Désolé, le site est en mode offline /</h1></div>
+        <div id="off-foot">
+            <div id="off-foot-ct">
+            <div id="off-foot--date">
+                <div id="foot-ret"><p class="retour">Retour à la normale prévu dans : </p></div>
+                <div class="date">11<p class="day">Heures</p></div>
+                <div class="date">28<p class="day">Min</p></div>
+                <div class="date">14<p class="day">Sec</p></div>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+</body>
+</html>

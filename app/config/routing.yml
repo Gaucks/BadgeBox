@@ -1,0 +1,4 @@
+badge_box:
+    resource: "@BadgeBoxBundle/Resources/config/routing.yml"
+    prefix:   /
+
