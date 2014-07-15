@@ -1,0 +1,90 @@
+body{
+    background:  url('../images/fond-accueil.jpg') no-repeat center fixed;
+    -webkit-background-size: cover; /* pour Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+    background-size: cover; /* version standardisée */
+}
+
+a.inherit{
+    text-decoration: none;
+    color: inherit;
+}
+
+#wlc{
+    margin: 0 auto;
+
+    height: 600px;
+    font-size: 1.1em;
+}
+
+#wlc h1#slogan{
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: justify;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#wlc-header{
+    margin: 0 auto;
+    width: 1000px;
+    padding-top: 100px;
+    margin-bottom: 200px;
+}
+
+#wlc-register{
+    float: right;
+    width: 480px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 10px;
+    margin-left: 50px;
+
+}
+
+#wlc-register label{
+    display: inline;
+    float: left;
+    width: 150px;
+    line-height: 3em;
+}
+
+#wlc-register input[type="text"].txt{
+    width: 300px;
+    height: 20px;
+    padding: 5px;
+    margin-bottom: 5px;
+    background: #333333;
+    border: 1px solid #666666;
+    color: #FFFFFF;
+}
+
+#wlc-register input[type="submit"].sub{
+    width: 100px;
+    background: #f06c57;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 5px;
+    float: right;
+    margin-right: 15px;
+}
+
+#wlc-sub{
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px #333333;
+}
+
+#wlc-sub span.sub{
+    padding: 20px 30px;
+    background: #f06c57;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 160px;
+    display: inline-block;
+}

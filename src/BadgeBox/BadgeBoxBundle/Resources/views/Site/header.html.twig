@@ -1,7 +1,19 @@
 <div id="header">
     <div id="header-box">
        <div id="header-box-ct"> <h1 id="title">Badge<span id="white-title">Box</span></h1> </div>
-        <div id="connect"><img src="{{ asset('bundles/badgebox/images/logo.jpg') }}" alt="avatar" id="avatar"> John Doe junior</div>
+
+        <div id="connect">
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <img src="{{ asset('bundles/badgebox/images/logo.jpg') }}" alt="avatar" id="avatar"> {{ app.user.username }}
+        {% else %}
+           <div id="head-connect">
+                <input type="text" class="head-login" placeholder="Nom d'utilisateur"/>
+                <input type="password" class="head-login" placeholder="Mot de passe"/>
+                <input type="submit" class="head-sub" value="Connexion"/>
+               <input type="button" value="Mot de passe oublié" class="head-sub"/>
+           </div>
+        {% endif %}
+        </div>
         <div class="clear"></div>
     </div>
 </div>
