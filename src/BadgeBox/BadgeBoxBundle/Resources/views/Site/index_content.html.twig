@@ -2,13 +2,9 @@
     <div id="wlc-header">
 
         <div id="wlc-register">
-            <label>Nom d'utilisateur</label>
-            <input type="text" placeholder="Nom d'utilisateur" class="txt" />
-            <label>Mot de passe</label>
-            <input type="text" placeholder="Mot de passe" class="txt" />
-            <label>Adresse email</label>
-            <input type="text" placeholder="Adresse email" class="txt" />
-            <input type="submit" value="Inscription" class="sub">
+
+            {{ render(controller('UserBundle:Registration:register')) }}
+
         </div>
 
         <h1 id="slogan">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur culpa dolores eum illum laborum

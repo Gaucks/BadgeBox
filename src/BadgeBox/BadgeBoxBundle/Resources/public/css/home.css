@@ -7,7 +7,7 @@
 
 #home-profil{
     float: left;
-    width: 270px;
+    width: 220px;
     background: #e7e3e0;
 }
 
@@ -19,7 +19,7 @@
 }
 
 #home-ct{
-    margin-left: 280px;
+    margin-left: 230px;
     margin-right: 260px;
     padding-top: 10px;
     min-width: 500px;
@@ -147,6 +147,9 @@
     float: right;
     width: 35%;
     margin: 0;
+    background: #eeeeee;
+    border-left: 1px dashed #FFFFFF;
+    border-style: inset;
 }
 
 h3#create-ach-title{
@@ -208,7 +211,9 @@ hr.create{
 .achievement-box-img{
     padding: 5px;
     line-height: 2em;
-    background: url('../images/bg_menu.gif');
+    border: 1px solid #cccccc;
+    border-style: inset;
+    border-top: none;
 }
 
 .achievement-box-img img.logo{

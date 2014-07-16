@@ -1,16 +1,15 @@
 <div id="header">
     <div id="header-box">
-       <div id="header-box-ct"> <h1 id="title">Badge<span id="white-title">Box</span></h1> </div>
+       <div id="header-box-ct">
+           <a href="{{ path('badge_box_homepage') }}"><h1 id="title">Badge<span id="white-title">Box</span></h1> </a></div>
 
         <div id="connect">
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <img src="{{ asset('bundles/badgebox/images/logo.jpg') }}" alt="avatar" id="avatar"> {{ app.user.username }}
+            <img src="{{ asset('bundles/badgebox/images/new-post.png') }}" alt="avatar" id="new-post">
+            Nouveaux challenges disponibles !
         {% else %}
-           <div id="head-connect">
-                <input type="text" class="head-login" placeholder="Nom d'utilisateur"/>
-                <input type="password" class="head-login" placeholder="Mot de passe"/>
-                <input type="submit" class="head-sub" value="Connexion"/>
-               <input type="button" value="Mot de passe oublié" class="head-sub"/>
+            <div id="head-connect">
+                {{ render(controller('UserBundle:Security:Login')) }}
            </div>
         {% endif %}
         </div>

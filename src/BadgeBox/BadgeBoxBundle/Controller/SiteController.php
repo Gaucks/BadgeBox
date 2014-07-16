@@ -8,7 +8,12 @@ class SiteController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('BadgeBoxBundle:Site:index.html.twig');
+        $securityContext = $this->container->get('security.context'); // Le controleur de sécurité
+
+        if(!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')){
+            return $this->render('BadgeBoxBundle:Site:index.html.twig');
+        }
+        return $this->redirect($this->generateUrl('badge_box_home'));
     }
 
     public function offlineAction()

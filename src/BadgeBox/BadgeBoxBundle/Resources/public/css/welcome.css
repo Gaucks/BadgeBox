@@ -35,11 +35,11 @@ a.inherit{
 
 #wlc-register{
     float: right;
-    width: 480px;
+    width: 310px;
     background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid #333333;
+    border: 1px solid #cccccc;
     border-radius: 4px;
-    padding: 10px;
+    padding: 20px;
     margin-left: 50px;
 
 }
@@ -51,14 +51,14 @@ a.inherit{
     line-height: 3em;
 }
 
-#wlc-register input[type="text"].txt{
+#wlc-register input[type="text"].txt, input[type="email"].txt,input[type="password"].txt{
     width: 300px;
     height: 20px;
     padding: 5px;
     margin-bottom: 5px;
-    background: #333333;
-    border: 1px solid #666666;
-    color: #FFFFFF;
+    background: #FFFFFF;
+    border: 1px solid #cccccc;
+    opacity: 0.7;
 }
 
 #wlc-register input[type="submit"].sub{
@@ -68,7 +68,6 @@ a.inherit{
     color: #FFFFFF;
     padding: 5px;
     float: right;
-    margin-right: 15px;
 }
 
 #wlc-sub{
