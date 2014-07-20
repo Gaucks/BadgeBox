@@ -1,1 +1,9 @@
 {% extends ('::base.html.twig') %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets '@UserBundle/Resources/public/css/fos.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {%  endstylesheets %}
+{% endblock %}
+

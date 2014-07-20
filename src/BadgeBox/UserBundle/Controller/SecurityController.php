@@ -60,7 +60,7 @@ class SecurityController extends ContainerAware
      */
     protected function renderLogin(array $data)
     {
-        $template = sprintf('UserBundle:Security:login.html.%s', $this->container->getParameter('fos_user.template.engine'));
+        $template = sprintf('FOSUserBundle:Security:login.html.%s', $this->container->getParameter('fos_user.template.engine'));
 
         return $this->container->get('templating')->renderResponse($template, $data);
     }
@@ -73,5 +73,42 @@ class SecurityController extends ContainerAware
     public function logoutAction()
     {
         throw new \RuntimeException('You must activate the logout in your security firewall configuration.');
+    }
+
+    /* Formulaire de login ajouté par moi meme*/
+
+    public function LoginBisAction(Request $request)
+    {
+        /** @var $session \Symfony\Component\HttpFoundation\Session\Session */
+        $session = $request->getSession();
+
+        // get the error if any (works with forward and redirect -- see below)
+        if ($request->attributes->has(SecurityContextInterface::AUTHENTICATION_ERROR)) {
+            $error = $request->attributes->get(SecurityContextInterface::AUTHENTICATION_ERROR);
+        } elseif (null !== $session && $session->has(SecurityContextInterface::AUTHENTICATION_ERROR)) {
+            $error = $session->get(SecurityContextInterface::AUTHENTICATION_ERROR);
+            $session->remove(SecurityContextInterface::AUTHENTICATION_ERROR);
+        } else {
+            $error = '';
+        }
+
+        if ($error) {
+            // TODO: this is a potential security risk (see http://trac.symfony-project.org/ticket/9523)
+            $error = $error->getMessage();
+        }
+        // last username entered by the user
+        $lastUsername = (null === $session) ? '' : $session->get(SecurityContextInterface::LAST_USERNAME);
+
+        $csrfToken = $this->container->has('form.csrf_provider')
+            ? $this->container->get('form.csrf_provider')->generateCsrfToken('authenticate')
+            : null;
+
+        $csrfToken = $this->container->get('form.csrf_provider')->generateCsrfToken('authenticate');
+
+        return $this->container->get('templating')->renderResponse('FOSUserBundle:Security:login_header.html.twig', array(
+            'last_username' => null,
+            'error'         => null,
+            'csrf_token'    => $csrfToken
+        ));
     }
 }

@@ -91,7 +91,7 @@ class ProfileController extends ContainerAware
         }
 
         return $this->container->get('templating')->renderResponse(
-            'FOSUserBundle:Profile:edit.html.'.$this->container->getParameter('fos_user.template.engine'),
+            'UserBundle:Profile:edit.html.'.$this->container->getParameter('fos_user.template.engine'),
             array('form' => $form->createView())
         );
     }

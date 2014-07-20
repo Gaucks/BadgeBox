@@ -27,7 +27,7 @@
 
 /* Fin de la base de la page d'accueil */
 
-#home-profil #profil-box{
+#profil-box{
     margin: 20px;
 }
 
@@ -35,11 +35,11 @@
     height: auto;
 }
 
-#home-profil #profil-box-avatar{
+#profil-box-avatar{
     float: left;
 }
 
-#home-profil #profil-box-avatar img.profil-avatar{
+#profil-box-avatar img.profil-avatar{
     width: 60px;
     height: 60px;
     border-radius: 4px;
@@ -86,11 +86,11 @@
 }
 
 #profil-box-post input[type="text"].profil-post{
-    border: 1px solid #b8b5b4;
-    width: 100%;
-    padding: 2px 5px;
-    height: 20px;
-    border-radius: 4px;
+    width: 160px;
+    padding: 5px 10px;
+    border: 1px solid #FFFFFF;
+    border-style: inset;
+    margin-bottom: 10px;
 }
 
 
@@ -358,4 +358,10 @@ img.fil-img-ach{
 
 #more-ach-title{
 
+}
+
+#more-people input[type="text"].search-friends{
+    width: 190px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
 }

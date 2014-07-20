@@ -1,8 +1,74 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+<div id="box">
+
+    {{ include('UserBundle:Perso:menu.html.twig') }}
+
+    <div id="user-edit">
+
+
+        <h2 class="page-title">Modifier mon profil</h2>
+
+        <h3 class="step">1/ Vos identifiants</h3>
+        <div id="user-edit-avatar">
+            <img src="{{ asset('bundles/badgebox/images/Avatars/world-burn.jpg') }}" alt="User Avatar" class="profil-edit-avatar"/>
+            <p>Modifier ma photo</p>
+        </div>
+
+
+        <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+
+        <div>
+        {{ form_errors(form.email) }}
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email, {'attr': {'class': 'txt', 'placeholder': 'Adresse email'}}) }}
+        </div>
+        <div>
+        {{ form_errors(form.username) }}
+        {{ form_label(form.username) }}
+        {{ form_widget(form.username, {'attr': {'class': 'txt', 'placeholder': 'Nom d\'utilisateur'}}) }}
+        </div>
+
+         <div>
+        {{ form_errors(form.current_password) }}
+        {{ form_label(form.current_password) }}
+        {{ form_widget(form.current_password, {'attr': {'class': 'txt', 'placeholder': 'Mot de passe actuel'}}) }}
+        </div>
+
+        {{ form_rest(form) }}
+
+    </form>
+
+        <h3 class="step">2/ Vos Coordonnées</h3>
+        <form>
+            <div>
+                <label class="required">Prénom</label>
+                <input type="text" class="txt" placeholder="Votre prénom" />
+            </div>
+
+            <div>
+                <label class="required">Nom</label>
+                <input type="text" class="txt" placeholder="Nom" />
+            </div>
+
+            <div>
+                <label class="required"l>Adresse</label>
+                <input type="text" class="txt" placeholder="Votre adresse" />
+            </div>
+
+            <div>
+                <label class="required">Decrivez vous</label>
+                <textarea class="area" placeholder="Decrivez vous en quelques mots"></textarea>
+            </div>
+
+
+            <div>
+                <input type="submit" value="{{ 'profile.edit.submit'|trans }}" class="sub"/>
+                <a href="{{ path('fos_user_change_password') }}" class="link">Changer de mot de passe </a>
+            </div>
+        </form>
+
     </div>
-</form>
+    <div class="clear"></div>
+
+</div>

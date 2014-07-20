@@ -87,3 +87,22 @@ a.inherit{
     width: 160px;
     display: inline-block;
 }
+
+#wlc-footer{
+    width: 1200px;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+
+}
+#wlc-footer ul#foot-ul{
+    display: inline-block;
+    color: #FFFFFF;
+}
+
+#wlc-footer li.footer{
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 0.9em;
+    margin-right: 5px;
+}

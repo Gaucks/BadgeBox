@@ -5,9 +5,10 @@
             <img src="{{ asset('bundles/badgebox/images/Avatars/world-burn.jpg') }}" alt="User Avatar" class="profil-avatar"/>
         </div>
         <div id="profil-box-infos">
-            <h3 class="username">Pseudonyme Complet</h3>
+            <h3 class="username"><a href="{{ path('fos_user_profile_edit') }}" class="link">
+                {{ app.user.username }}</a></h3>
             <p class="username">Christophe Gautier</p>
-            <p>Points: 2000  <span>Follower: 2000</span></p>
+            <p>Points: 2000  <span>Follower: 1</span></p>
         </div>
         <div id="profil-box-infos-opt">
             <span class="opt">

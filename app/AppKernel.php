@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new BadgeBox\BadgeBoxBundle\BadgeBoxBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new BadgeBox\UserBundle\UserBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

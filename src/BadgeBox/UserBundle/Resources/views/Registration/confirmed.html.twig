@@ -1,11 +1,21 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "UserBundle::layout.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block fos_user_content %}
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+{% block content %}
+    <div id="user-login">
+
+    <h1 id="reg_ok">{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</h1>
+
     {% if app.session is not empty %}
         {% set targetUrl = app.session.get('_security.' ~ app.security.token.providerKey ~ '.target_path') %}
         {% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>{% endif %}
     {% endif %}
-{% endblock fos_user_content %}
+
+    </div>
+
+    <div id="reg_quit_box">
+        <h2 id="reg_quit">
+            <a href="{{ path('fos_user_profile_edit') }}" class="link">Il est temps de créer votre profil</a></h2>
+    </div>
+{% endblock content %}

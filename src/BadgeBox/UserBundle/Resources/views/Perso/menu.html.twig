@@ -1,0 +1,41 @@
+<div id="user-menu">
+    <div id="menu-box">
+        <div id="menu-box-head">
+
+            <div id="menu-box-avatar">
+                <img src="{{ asset('bundles/badgebox/images/Avatars/world-burn.jpg') }}" alt="User Avatar" class="profil-avatar"/>
+            </div>
+
+            <div id="menu-box-infos">
+                <h3 class="username"><a href="{{ path('badge_box_home') }}" class="link">
+                        {{ app.user.username }}</a></h3>
+                <p class="username">Christophe Gautier</p>
+                <p>Points: 2000  <span>Follower: 1</span></p>
+            </div>
+
+            <div id="menu-box-menu">
+                <ul class="menu">
+                    <a href="{{ path('fos_user_profile_edit') }}"  class="link">
+                        <li class="user-menu">
+                            <img src="{{ asset('bundles/badgebox/images/ico/vcard@2x.png') }}" alt="icone" class="ico-menu"/>Profil
+                        </li>
+                    </a>
+
+                    <a href="{{ path('fos_user_change_password') }}"  class="link">
+                        <li class="user-menu">
+                            <img src="{{ asset('bundles/badgebox/images/ico/key@2x.png') }}" alt="icone" class="ico-menu"/>Mot de passe
+                        </li>
+                    </a>
+
+                    <a href="{{ path('fos_user_profile_edit') }}"  class="link">
+                        <li class="user-menu">
+                            <img src="{{ asset('bundles/badgebox/images/ico/user-diploma@2x.png') }}" alt="icone" class="ico-menu"/>Epreuves
+                        </li>
+                    </a>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+ </div>
