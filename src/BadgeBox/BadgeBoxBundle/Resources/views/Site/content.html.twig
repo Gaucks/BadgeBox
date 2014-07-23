@@ -1,139 +1,78 @@
-{% include('BadgeBoxBundle:Site:quick-create.html.twig') %}
+{% render( controller('BadgeBoxBundle:Challenge:quickCreate')) %}
 
 <div id="content-fil">
 
+    {% if post != NULL %}
+        {% for p in post %}
+             {% if p.type == 2 %} {# Si c'est un post de challenge #}
+                 <div class="fil-actu">
+                     <img src="{{ asset('bundles/badgebox/images/achievements/world-class-achievement.png') }}" class="fil-img-ach" />
+                     <div class="fil-actu-av">
+                         <img src="{{ asset('bundles/badgebox/images/Avatars/world-burn.jpg') }}" class="fil-avatar">
+                         <p class="points">{{ p.user.points }} points</p>
+                     </div>
 
-    <div class="fil-actu">
-        <img src="{{ asset('bundles/badgebox/images/achievements/world-class-achievement.png') }}" class="fil-img-ach" />
-        <div class="fil-actu-av">
-            <img src="{{ asset('bundles/badgebox/images/Avatars/world-burn.jpg') }}" class="fil-avatar">
-            <p class="points">50 points</p>
+                     <div class="fil-actu-ct">
+                         <p class="infos">
+                             <img src="{{ asset('bundles/badgebox/images/ico/next@2x.png') }}" class="icostart" />
+                             <a href="{{ path('badge_box_home') }}" class="link">{{ p.user.username }} </a>
+
+                             <img src="{{ asset('bundles/badgebox/images/ico/calendar@2x.png') }}" class="ico" />
+                             {{ p.date|date('d/m/Y') }}
+                             <img src="{{ asset('bundles/badgebox/images/ico/clock@2x.png') }}" class="ico" />
+                             {{ p.date|date('H:i') }}</p>
+                         <p class="actu-challenge">Nouveau challenge " {{ p.title }} ".</p>
+                         <p class="actu-challenge-guest">Invité(s): Tous mes amis</p>
+                         <br/>
+                         <p class="actu-challenge-desc">Description du challenge:</p>
+                         <p class="actu">{{ p.content }}</p>
+                         <p class="options">Accepter - <span class="red">Decliner</span></p>
+                     </div>
+                 </div>
+
+                {% else %} {# Si c'est un post normal #}
+                    <div class="fil-actu">
+                        <div class="fil-actu-av">
+                            <img src="{{ asset('bundles/badgebox/images/Avatars/world-burn.jpg') }}" class="fil-avatar">
+                            <p class="points">{{ p.user.points }} points</p>
+                        </div>
+
+                        <div class="fil-actu-ct">
+                            <p class="infos">
+                                <img src="{{ asset('bundles/badgebox/images/ico/next@2x.png') }}" class="icostart" />
+                                <a href="{{ path('badge_box_home') }}" class="link">{{ p.user.username }} </a>
+
+                                <img src="{{ asset('bundles/badgebox/images/ico/calendar@2x.png') }}" class="ico" />
+                                {{ p.date|date('d/m/Y') }}
+                                <img src="{{ asset('bundles/badgebox/images/ico/clock@2x.png') }}" class="ico" />
+                                {{ p.date|date('H:i') }}</p>
+                            <p class="actu">{{ p.content }}</p>
+                        </div>
+                    </div>
+        {% endif %}
+        {% endfor %}
+    {% else %}
+        <div class="fil-actu">
+            <div class="fil-actu-av">
+                <img src="{{ asset('bundles/badgebox/images/Avatars/world-burn.jpg') }}" class="fil-avatar">
+                <p class="points">{{ app.user.points }} points</p>
+            </div>
+
+            <div class="fil-actu-ct">
+
+                <p class="infos">
+                    <img src="{{ asset('bundles/badgebox/images/ico/next@2x.png') }}" class="icostart" />
+                    <a href="{{ path('badge_box_home') }}" class="link">{{ app.user.username }} </a>
+
+                    <img src="{{ asset('bundles/badgebox/images/ico/calendar@2x.png') }}" class="ico" />
+                    {{ app.user.created|date('d/m/Y') }}
+                    <img src="{{ asset('bundles/badgebox/images/ico/clock@2x.png') }}" class="ico" />
+                    {{ app.user.created|date('h:i') }}</p>
+                <p class="actu">Bienvenue dans votre page d'accueil, c'est ici que tout se passe ou presque.</p>
+
+            </div>
         </div>
-
-        <div class="fil-actu-ct">
-            <p class="infos">
-                <img src="{{ asset('bundles/badgebox/images/ico/next@2x.png') }}" class="icostart" />
-                <a href="{{ path('badge_box_home') }}" class="link">Christophe Gautier</a>
-
-                <img src="{{ asset('bundles/badgebox/images/ico/calendar@2x.png') }}" class="ico" />
-                30/01/13
-                <img src="{{ asset('bundles/badgebox/images/ico/clock@2x.png') }}" class="ico" />
-                13h20</p>
-            <p class="actu">A ab cupiditate
-                placeat quaerat recusandae velit. Asperiores commodi dolore doloribus dolorum</p>
-            <p class="options">Accepter - <span class="red">Decliner</span></p>
-        </div>
-    </div>
-
-    <div class="fil-actu">
-        <img src="{{ asset('bundles/badgebox/images/achievements/world-class-achievement.png') }}" class="fil-img-ach" />
-        <div class="fil-actu-av">
-            <img src="{{ asset('bundles/badgebox/images/Avatars/noAvatar.png') }}" class="fil-avatar">
-            <p class="points">12000 points</p>
-        </div>
-
-        <div class="fil-actu-ct">
-            <p class="infos">
-                <img src="{{ asset('bundles/badgebox/images/ico/next@2x.png') }}" class="icostart" />
-                <a href="{{ path('badge_box_home') }}" class="link">Christophe Gautier</a>
-
-                <img src="{{ asset('bundles/badgebox/images/ico/calendar@2x.png') }}" class="ico" />
-                30/01/13
-                <img src="{{ asset('bundles/badgebox/images/ico/clock@2x.png') }}" class="ico" />
-                13h20</p>
-            <p class="actu">Amandine à obtenu 10 nouveaux points grace au challenge " Téléphone au volant ".</p>
-            <p class="options">Accepter - <span class="red">Decliner</span></p>
-        </div>
-    </div>
-
-    <div class="fil-actu">
-        <img src="{{ asset('bundles/badgebox/images/achievements/world-class-achievement.png') }}" class="fil-img-ach" />
-        <div class="fil-actu-av">
-            <img src="{{ asset('bundles/badgebox/images/Avatars/amandine.jpg') }}" class="fil-avatar">
-            <p class="points">800 points</p>
-        </div>
-
-        <div class="fil-actu-ct">
-            <p class="infos">
-                <img src="{{ asset('bundles/badgebox/images/ico/next@2x.png') }}" class="icostart" />
-                <a href="{{ path('badge_box_home') }}" class="link">Amandine Gautier</a>
-
-                <img src="{{ asset('bundles/badgebox/images/ico/calendar@2x.png') }}" class="ico" />
-                30/01/13
-                <img src="{{ asset('bundles/badgebox/images/ico/clock@2x.png') }}" class="ico" />
-                13h20</p>
-            <p class="actu">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cupiditate
-                placeat quaerat recusandae velit. Asperiores commodi dolore doloribus dolorum</p>
-            <p class="options">Epreuve réussit ! +10 points</p>
-        </div>
-    </div>
-
-    <div class="fil-actu">
-        <img src="{{ asset('bundles/badgebox/images/achievements/world-class-achievement.png') }}" class="fil-img-ach" />
-        <div class="fil-actu-av">
-            <img src="{{ asset('bundles/badgebox/images/Avatars/world-burn.jpg') }}" class="fil-avatar">
-            <p class="points">50 points</p>
-        </div>
-
-        <div class="fil-actu-ct">
-            <p class="infos">
-                <img src="{{ asset('bundles/badgebox/images/ico/next@2x.png') }}" class="icostart" />
-                <a href="{{ path('badge_box_home') }}" class="link">Amandine Gautier</a>
-
-                <img src="{{ asset('bundles/badgebox/images/ico/calendar@2x.png') }}" class="ico" />
-                30/01/13
-                <img src="{{ asset('bundles/badgebox/images/ico/clock@2x.png') }}" class="ico" />
-                13h20</p>
-            <p class="actu">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cupiditate
-                placeat quaerat recusandae velit. Asperiores commodi dolore doloribus dolorum</p>
-            <p class="options">Accepter - <span class="red">Decliner</span></p>
-        </div>
-    </div>
-
-    <div class="fil-actu">
-        <img src="{{ asset('bundles/badgebox/images/achievements/world-class-achievement.png') }}" class="fil-img-ach" />
-        <div class="fil-actu-av">
-            <img src="{{ asset('bundles/badgebox/images/Avatars/noAvatar.png') }}" class="fil-avatar">
-            <p class="points">12000 points</p>
-        </div>
-
-        <div class="fil-actu-ct">
-            <p class="infos">
-                <img src="{{ asset('bundles/badgebox/images/ico/next@2x.png') }}" class="icostart" />
-                <a href="{{ path('badge_box_home') }}" class="link">Christophe Gautier</a>
-
-                <img src="{{ asset('bundles/badgebox/images/ico/calendar@2x.png') }}" class="ico" />
-                30/01/13
-                <img src="{{ asset('bundles/badgebox/images/ico/clock@2x.png') }}" class="ico" />
-                13h20</p>
-            <p class="actu">
-                placeat quaerat recusandae velit. Asperiores commodi dolore doloribus dolorum</p>
-            <p class="options">Accepter - <span class="red">Decliner</span></p>
-        </div>
-    </div>
-
-    <div class="fil-actu">
-        <img src="{{ asset('bundles/badgebox/images/achievements/world-class-achievement.png') }}" class="fil-img-ach" />
-        <div class="fil-actu-av">
-            <img src="{{ asset('bundles/badgebox/images/Avatars/amandine.jpg') }}" class="fil-avatar">
-            <p class="points">800 points</p>
-        </div>
-
-        <div class="fil-actu-ct">
-            <p class="infos">
-                <img src="{{ asset('bundles/badgebox/images/ico/next@2x.png') }}" class="icostart" />
-                <a href="{{ path('badge_box_home') }}" class="link">Amandine Gautier</a>
-
-                <img src="{{ asset('bundles/badgebox/images/ico/calendar@2x.png') }}" class="ico" />
-                30/01/13
-                <img src="{{ asset('bundles/badgebox/images/ico/clock@2x.png') }}" class="ico" />
-                13h20</p>
-            <p class="actu">Lorem ipsum dolor A ab cupiditate
-                placeat quaerat recusandae velit. Asperiores commodi dolore doloribus dolorum</p>
-            <p class="options">Epreuve réussit ! +10 points</p>
-        </div>
-    </div>
-
+    {% endif %}
 </div>
 
 

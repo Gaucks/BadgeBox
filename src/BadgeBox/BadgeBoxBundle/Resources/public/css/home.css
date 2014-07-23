@@ -3,6 +3,7 @@
 #home{
     height: 100%;
     background: #f4f5f7;
+    padding-bottom: 50px;
 }
 
 #home-profil{
@@ -70,7 +71,7 @@
 }
 
 #profil-box-message{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 #profil-box-infos-opt{
@@ -91,6 +92,16 @@
     border: 1px solid #FFFFFF;
     border-style: inset;
     margin-bottom: 10px;
+}
+
+#profil-box-post textarea.profil-post{
+    width: 160px;
+    height: 15px;
+    padding: 5px 10px;
+    border: 1px solid #FFFFFF;
+    border-style: inset;
+    margin-bottom: 10px;
+    resize: none;
 }
 
 
@@ -138,14 +149,14 @@
 }
 
 #font-home{
-    padding: 10px 0px 20px 0;
+    padding: 10px 0px 0px 0;
     float: left;
-    width: 60%;
+    width: 58%;
 }
 
 .achievement-box{
     float: right;
-    width: 35%;
+    width: 38%;
     margin: 0;
     background: #eeeeee;
     border-left: 1px dashed #FFFFFF;
@@ -161,7 +172,7 @@ label.create{
     display: block;
 }
 
-textarea#qck-area{
+textarea.create-ach-area{
     height: 40px;
     padding: 5px;
     background: #f4f5f7 ;
@@ -210,20 +221,19 @@ hr.create{
 
 .achievement-box-img{
     padding: 5px;
-    line-height: 2em;
-    border: 1px solid #cccccc;
-    border-style: inset;
-    border-top: none;
+    line-height: 1.6em;
+    border-bottom: 1px solid #cccccc;
 }
 
 .achievement-box-img img.logo{
     float: left;
-    height: 24px;
-    margin: 0px 10px 0 0px;
+    height: 20px;
+    margin: 0px 10px 2px 0px;
 }
 
 .achievement-box-img  h4{
     font-weight: bold;
+    font-size: 0.9em;
 }
 
 /* Fin de la partie superieur du contenu
@@ -277,7 +287,7 @@ p.points{
 }
 
 .fil-actu-ct span.red{
-    color: red;
+    color: #f06c57;
 }
 
 .fil-actu-ct p.actu{
@@ -285,6 +295,30 @@ p.points{
     line-height: 1.5em;
     margin-right: 50px;
 }
+
+.fil-actu-ct p.actu-challenge{
+    line-height: 1.5em;
+    margin-right: 50px;
+    font-weight: bold;
+    color: #f06c57;
+}
+
+.fil-actu-ct p.actu-challenge-guest{
+    line-height: 1.5em;
+    margin-right: 50px;
+    font-weight: bold;
+    color: #aacd4e;
+    font-style: oblique;
+}
+
+.fil-actu-ct p.actu-challenge-desc{
+    text-decoration: underline;
+    line-height: 1.5em;
+    margin-right: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .fil-actu-ct img.ico{
     margin: 0 5px;
     height: 20px;
@@ -299,8 +333,9 @@ p.points{
 
 img.fil-img-ach{
     position: absolute;
-    right: 2px;
-    width: 50px;
+    right: 20px;
+    top: 2px;
+    width: 36px;
 }
 
 

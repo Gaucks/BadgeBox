@@ -27,6 +27,41 @@ h4{ font-size: 1em }
 
 input[type="submit"],input[type="button"]{ cursor: pointer }
 
+input::-webkit-input-placeholder {
+    color: #999;
+    font-style: italic
+
+}
+input::-moz-placeholder {
+    color: #999;
+    font-style: italic
+
+}
+input:-moz-placeholder {   /* Older versions of Firefox */
+    color: #999;
+    font-style: italic
+
+}
+input:-ms-input-placeholder {
+    color: #999;
+    font-style: italic
+}
+textarea::-webkit-input-placeholder {
+    color: #999;
+    font-style: italic
+}
+textarea::-moz-placeholder {
+    color: #999;
+    font-style: italic
+}
+textarea:-moz-placeholder {   /* Older versions of Firefox */
+    color: #999;
+    font-style: italic
+}
+textarea:-ms-input-placeholder {
+    color: #999;
+    font-style: italic
+}
 #site{
     height: 100%;
 }
@@ -57,9 +92,24 @@ input[type="submit"],input[type="button"]{ cursor: pointer }
         color: #FFF;
     }
 
+    #header-box-menu{
+        float: left;
+        margin-left: 10px;
+        line-height: 1.8em;
+    }
+
+    #header-box-menu li.menu{
+        display: inline;
+        color: #565656;
+        font-weight: bold;
+        border-right: 1px solid #565656;
+        padding: 0 10Px;
+        text-shadow: 1px 1px 1px #222222;
+    }
+
     #connect{
         color: #FFFFFF;
-        width: 700px;
+        width: 800px;
         float: right;
         text-align: right;
         position: relative;
@@ -106,7 +156,10 @@ input[type="submit"],input[type="button"]{ cursor: pointer }
     height: 40px;
     position: absolute;
     right: 180px;
-    top: -5px;
+}
+
+#header-box #connect p.infos{
+    line-height: 1.8em;
 }
 
 #underheader{
@@ -125,38 +178,15 @@ input[type="submit"],input[type="button"]{ cursor: pointer }
     margin: 0 auto;
 }
 
-input::-webkit-input-placeholder {
-    color: #999;
-    font-style: italic
+#user-deconnected{
+    width: 500px;
+    margin: 0 auto;
+    background: #e7e3e0;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 4px;
+    text-align: center;
+}
 
-}
-input::-moz-placeholder {
-    color: #999;
-    font-style: italic
-
-}
-input:-moz-placeholder {   /* Older versions of Firefox */
-    color: #999;
-    font-style: italic
-
-}
-input:-ms-input-placeholder {
-    color: #999;
-    font-style: italic
-}
-textarea::-webkit-input-placeholder {
-    color: #999;
-    font-style: italic
-}
-textarea::-moz-placeholder {
-    color: #999;
-    font-style: italic
-}
-textarea:-moz-placeholder {   /* Older versions of Firefox */
-    color: #999;
-    font-style: italic
-}
-textarea:-ms-input-placeholder {
-    color: #999;
-    font-style: italic
+#user-deconnected h1#dec_ok{
 }

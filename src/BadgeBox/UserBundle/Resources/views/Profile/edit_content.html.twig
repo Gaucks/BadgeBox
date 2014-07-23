@@ -11,7 +11,7 @@
 
         <h3 class="step">1/ Vos identifiants</h3>
         <div id="user-edit-avatar">
-            <img src="{{ asset('bundles/badgebox/images/Avatars/world-burn.jpg') }}" alt="User Avatar" class="profil-edit-avatar"/>
+            <img src="{{ asset('bundles/badgebox/images/Avatars/') }}{{ app.user.avatar }}" alt="User Avatar" class="profil-edit-avatar"/>
             <p>Modifier ma photo</p>
         </div>
 
@@ -23,49 +23,72 @@
         {{ form_label(form.email) }}
         {{ form_widget(form.email, {'attr': {'class': 'txt', 'placeholder': 'Adresse email'}}) }}
         </div>
+
         <div>
         {{ form_errors(form.username) }}
         {{ form_label(form.username) }}
         {{ form_widget(form.username, {'attr': {'class': 'txt', 'placeholder': 'Nom d\'utilisateur'}}) }}
         </div>
 
-         <div>
-        {{ form_errors(form.current_password) }}
-        {{ form_label(form.current_password) }}
-        {{ form_widget(form.current_password, {'attr': {'class': 'txt', 'placeholder': 'Mot de passe actuel'}}) }}
-        </div>
-
-        {{ form_rest(form) }}
-
-    </form>
-
         <h3 class="step">2/ Vos Coordonnées</h3>
-        <form>
+
             <div>
-                <label class="required">Prénom</label>
-                <input type="text" class="txt" placeholder="Votre prénom" />
+                {{ form_errors(form.name) }}
+                {{ form_label(form.name, NULL, {'label_attr': {'class': 'required' }}) }}
+                {{ form_widget(form.name, {'attr': {'class': 'txt', 'placeholder': 'Nom de famille'}}) }}
             </div>
 
             <div>
-                <label class="required">Nom</label>
-                <input type="text" class="txt" placeholder="Nom" />
+                {{ form_errors(form.firstname) }}
+                {{ form_label(form.firstname, NULL, {'label_attr': {'class': 'required' }}) }}
+                {{ form_widget(form.firstname, {'attr': {'class': 'txt', 'placeholder': 'Prénom'}}) }}
             </div>
 
             <div>
-                <label class="required"l>Adresse</label>
-                <input type="text" class="txt" placeholder="Votre adresse" />
+                {{ form_errors(form.description) }}
+                {{ form_label(form.description, NULL, {'label_attr': {'class': 'required' }}) }}
+                {{ form_widget(form.description, {'attr': {'class': 'area', 'placeholder': 'Décrivez vous en quelques mots.'}}) }}
+            </div>
+
+            <h3 class="step">3/ Réseaux sociaux</h3>
+
+            <div>
+                {{ form_errors(form.facebook) }}
+                <img src="{{ asset('bundles/badgebox/images/facebook.png') }}" alt="Facebook" class="ico-sociaux"/>
+                {{ form_label(form.facebook, NULL, {'label_attr': {'class': 'required-sociaux' }}) }}
+                {{ form_widget(form.facebook, {'attr': {'class': 'txt', 'placeholder': 'facebook.com'}}) }}
             </div>
 
             <div>
-                <label class="required">Decrivez vous</label>
-                <textarea class="area" placeholder="Decrivez vous en quelques mots"></textarea>
+                {{ form_errors(form.twitter) }}
+                <img src="{{ asset('bundles/badgebox/images/twitter.png') }}" alt="Twitter" class="ico-sociaux"/>
+                {{ form_label(form.twitter, NULL, {'label_attr': {'class': 'required-sociaux' }}) }}
+                {{ form_widget(form.twitter, {'attr': {'class': 'txt', 'placeholder': 'twitter.com'}}) }}
             </div>
 
+            <div>
+                {{ form_errors(form.googleplus) }}
+                <img src="{{ asset('bundles/badgebox/images/googleplus.png') }}" alt="Google+" class="ico-sociaux"/>
+                {{ form_label(form.googleplus, NULL, {'label_attr': {'class': 'required-sociaux' }}) }}
+                {{ form_widget(form.googleplus, {'attr': {'class': 'txt', 'placeholder': 'Google+'}}) }}
+            </div>
+
+            <h3 class="step">4/ Mot de passe</h3>
+
+            <div>
+                {{ form_errors(form.current_password) }}
+                {{ form_label(form.current_password) }}
+                {{ form_widget(form.current_password, {'attr': {'class': 'txt', 'placeholder': 'Mot de passe actuel'}}) }}
+            </div>
+
+            {{ form_rest(form) }}
 
             <div>
                 <input type="submit" value="{{ 'profile.edit.submit'|trans }}" class="sub"/>
                 <a href="{{ path('fos_user_change_password') }}" class="link">Changer de mot de passe </a>
             </div>
+
+
         </form>
 
     </div>

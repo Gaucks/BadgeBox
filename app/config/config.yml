@@ -11,7 +11,7 @@ framework:
         strict_requirements: ~
     form:            ~
     csrf_protection: ~
-    validation:      { enable_annotations: true }
+    validation:      { enable_annotations: true, api: 2.4, enable_annotations: true }
     templating:
         engines: ['twig']
         #assets_version: SomeVersionScheme
@@ -23,6 +23,7 @@ framework:
         handler_id:  ~
     fragments:       ~
     http_method_override: true
+
 
 # Twig Configuration
 twig:
@@ -72,3 +73,21 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: BadgeBox\UserBundle\Entity\User
+
+services:
+    fos_user.profile.form.type:
+            class: BadgeBox\UserBundle\Form\Type\ProfileFormType
+            arguments: [%fos_user.model.user.class%]
+            tags:
+                - { name: form.type, alias: fos_user_profile }
+
+    fos_user.registration.form.type:
+            class: BadgeBox\UserBundle\Form\Type\RegistrationFormType
+            arguments: [%fos_user.model.user.class%]
+            tags:
+                - { name: form.type, alias: fos_user_registration }
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            timestampable: true

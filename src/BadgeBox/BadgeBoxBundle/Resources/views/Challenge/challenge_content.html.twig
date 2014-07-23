@@ -1,0 +1,35 @@
+<div id="box">
+
+    <div id="box-challenge">
+
+        <div id="box-challenge-stats">
+            <h1 id="chal-title">N°{{ challenge.id }} - {{ challenge.title }} </h1>
+
+            <p class="chal-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores corporis excepturi fuga ipsam itaque
+                labore magnam nisi quaerat quasi, quis saepe sed suscipit tempore, velit, voluptatem voluptatibus! Fugiat, fugit.</p>
+
+            <ul>
+                <li class="stats"><span class="stats-qu">Date de création : </span><span class="stats-rep">{{ challenge.date|date('d/m/Y') }}</span></li>
+                <li class="stats"><span class="stats-qu">Auteur : </span><span class="stats-rep">{{ challenge.user.username }}</span></li>
+                <li class="stats"><span class="stats-qu">Points attribués : </span><span class="stats-rep">10</span></li>
+                <li class="stats"><span class="stats-qu">Participants : </span><span class="stats-rep">1</span></li>
+                <li class="stats"><span class="stats-qu">Réussit : </span><span class="stats-rep">1</span></li>
+                <li class="stats"><span class="stats-qu">Echecs : </span><span class="stats-rep">1</span></li>
+            </ul>
+
+            <a href="{{ path('badge_box_home') }}" class="link">
+                <input type="button" value="Vous avez déja participer à ce challenge" class="button" />
+            </a>
+
+        </div>
+
+        <div id="box-challenge-pic">
+            <img src="{{ asset('bundles/badgebox/images/achievements/world-class-achievement.png') }}"
+                 alt="{{ challenge.title }}" class="chal-pic" />
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+
+</div>

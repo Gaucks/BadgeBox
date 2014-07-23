@@ -1,0 +1,37 @@
+<div id="content-header">
+    <div id="font-home">
+        <h3 id="create-ach-title">Créer votre challenge rapidement</h3>
+        <hr class="create"/>
+        <form action="{{ path('badge_box_quick_challenge') }}" method="post">
+        {{ form_widget(form.title, {'attr': {'class': 'create-ach', 'placeholder': 'Le titre du challenge'}}) }}
+        {{ form_widget(form.content, {'attr': {'class': 'create-ach-area', 'placeholder': 'Decrivez votre challenge'}}) }}
+        {{ form_rest(form) }}
+
+        <hr class="create"/>
+
+        <select class="qck-sel">
+            <option> Catégorie </option>
+            <option>je ne sais pas</option>
+        </select>
+
+        <select class="qck-sel">
+            <option> Tous mes amis </option>
+            <option>Amandine Gautier Poony</option>
+        </select>
+        <input type="submit" id="qck-sub" value="Créer" />
+        </form>
+
+    </div>
+
+    <div class="achievement-box">
+        {% for c in challenges %}
+            <a href="{{ path('badge_box_challenge',{'id': c.id } )}}" class="link">
+        <div class="achievement-box-img">
+            <img src="{{ asset('bundles/badgebox/images/achievements/world-class-achievement.png') }}"  alt="logo" class="logo"/>
+            <h4>{{ c.title }}</h4>
+        </div>
+            </a>
+        {% endfor %}
+
+    </div>
+</div>

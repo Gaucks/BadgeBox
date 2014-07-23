@@ -7,10 +7,17 @@ div.error{
     font-size: 1em;
 }
 
+img.ico-sociaux{
+    width: 18px;
+    float: left;
+    margin-top: -3px;
+}
+
 #box{
     border: 1px solid #e7e3e0;
     width: 1200px;
     background: #FFFFFF;
+    margin-bottom: 50px;
 }
 
 #box h3.step{
@@ -40,6 +47,12 @@ div.error{
 #user-edit label.required{
     display: inline-block;
     width: 130px;
+    float: left;
+}
+
+#user-edit label.required-sociaux{
+    display: inline-block;
+    width: 110px;
     float: left;
 }
 
@@ -96,7 +109,6 @@ div.error{
         border-radius: 4px;
         box-shadow: 2px 2px 10px #333333;
         margin-right: 20px;
-
     }
 
 #user-edit p.help{
@@ -260,6 +272,17 @@ h1#reg_ok{
     color: #b8b4b1;
 }
 
+#menu-box-infos-opt{
+    margin-bottom: 20px;
+}
+#menu-box-infos-opt img.profil-ico{
+    width: 18px;
+    vertical-align: middle;
+    margin-top: -3px;
+
+}
+
+
 #menu-box-menu{
 
 }
@@ -286,5 +309,53 @@ h1#reg_ok{
     width: 24px;
     vertical-align: middle;
     margin-right: 5px;
-    margin-top: -7px;
+    margin-top: -3px;
+}
+
+#signin-left{
+    float: left;
+    width: 300px;
+}
+
+#signin-right{
+    margin: -20px -20px -20px 300px;
+    background: #333333;
+    padding: 20px;
+    text-align: justify;
+    min-height: 170px;
+}
+
+#signin-right p.infos{
+      color: #FFFFFF;
+}
+
+#signin-right p.infos-why{
+    color: #f06c57;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#signin-right p.infos-sign{
+    color: #f06c57;
+    font-weight: bold;
+    margin-top: 20px;
+    float: right;
+}
+
+#signin-right h2.title{
+    color: #FFFFFF;
+}
+
+#signin-right ul{
+    margin: 20px ;
+}
+
+#signin-right li.signin-reason{
+    margin-bottom: 10px;
+    color: #ffffff;
+    list-style-type: disc;
+}
+
+.error-signin{
+    color: #f06c57;
 }

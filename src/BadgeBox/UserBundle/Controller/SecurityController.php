@@ -75,7 +75,7 @@ class SecurityController extends ContainerAware
         throw new \RuntimeException('You must activate the logout in your security firewall configuration.');
     }
 
-    /* Formulaire de login ajouté par moi meme*/
+    /* Formulaire de login ajouté par moi meme */
 
     public function LoginBisAction(Request $request)
     {

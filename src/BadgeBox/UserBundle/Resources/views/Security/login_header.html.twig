@@ -19,6 +19,10 @@
         <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
 
         <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" class="head-sub" />
+        <a href="{{ path('fos_user_resetting_request') }}" class="link">
+            Mot de passe oublié
+        </a>
     </form>
+
 
 {% endblock content %}

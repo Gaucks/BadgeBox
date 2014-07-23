@@ -20,7 +20,16 @@
 
     <div id="content">{% block content %}{% endblock %}</div>
 
-    {% block javascripts %}{% endblock %}
+    {% block javascripts %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+        <script>
+            $('#sub-bouton').hide();
+            $('#badgebox_badgeboxbundle_post_content').click(function() {
+                $('#badgebox_badgeboxbundle_post_content').css({ 'height': '80px' });
+                $('#sub-bouton').show();
+            });
+        </script>
+    {% endblock %}
 </div>
 </body>
 </html>

@@ -12,3 +12,28 @@ badge_box_offline:
 badge_box_home:
     path:     /home
     defaults: { _controller: BadgeBoxBundle:Site:home }
+
+#Page d'accueil une fois connecté
+badge_box_home_post:
+    path:     /post
+    defaults: { _controller: BadgeBoxBundle:Site:post }
+
+#Pour poster un nouveau challenge rapide
+badge_box_quick_challenge:
+    path:     /new-challenge
+    defaults: { _controller: BadgeBoxBundle:Challenge:quickCreate }
+
+#Page de déconnexion du site
+badge_box_aurevoir:
+    path:     /aurevoir
+    defaults: { _controller: BadgeBoxBundle:Site:aurevoir }
+
+#Page concernant les challenges
+##############################
+
+#Page affichant le challenge
+badge_box_challenge:
+    path:    /challenge/{id}
+    defaults: { _controller: BadgeBoxBundle:Challenge:show }
+    requirements:
+        id: \d+

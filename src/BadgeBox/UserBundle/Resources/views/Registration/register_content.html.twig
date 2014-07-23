@@ -1,21 +1,56 @@
 {% trans_default_domain 'FOSUserBundle' %}
+<div id="user-login">
 
-<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
-    {{ form_errors(form.email) }}
-    {{ form_widget(form.email, {'attr': {'class': 'txt', 'placeholder': 'votre-email@mail.com'}}) }}
+     <div id="signin-left">
+         <h2 class="title">Inscription</h2>
+    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
 
-    {{ form_errors(form.username) }}
-    {{ form_widget(form.username, {'attr': {'class': 'txt', 'placeholder': 'Nom d\'utilisateur'}}) }}
+        {{ form_errors(form) }}
 
-    {{ form_errors(form.plainPassword.first) }}
-    {{ form_widget(form.plainPassword.first, {'attr': {'class': 'txt', 'placeholder': 'Mot de passe'}}) }}
+        <div class="error-signin">{{ form_errors(form.email) }}</div>
+        {{ form_label(form.email, NULL, {'label_attr': {'class': 'label-login'}}) }}
+        {{ form_widget(form.email, {'attr': {'class': 'main-login', 'placeholder': 'votre-email@mail.com'}}) }}
 
-    {{ form_errors(form.plainPassword.second) }}
-    {{ form_widget(form.plainPassword.second, {'attr': {'class': 'txt', 'placeholder': 'Confirmation'}}) }}
+        <div class="error-signin">{{ form_errors(form.username) }}</div>
+        {{ form_label(form.username, NULL, {'label_attr': {'class': 'label-login'}}) }}
+        {{ form_widget(form.username, {'attr': {'class': 'main-login', 'placeholder': 'Nom d\'utilisateur'}}) }}
 
-    {{ form_rest(form) }}
+        <div class="error-signin">{{ form_errors(form.plainPassword.first) }}</div>
+        {{ form_label(form.plainPassword.first, NULL, {'label_attr': {'class': 'label-login'}}) }}
+        {{ form_widget(form.plainPassword.first, {'attr': {'class': 'main-login', 'placeholder': 'Mot de passe'}}) }}
 
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" class="sub"/>
+        <div class="error-signin">{{ form_errors(form.plainPassword.second) }}</div>
+        {{ form_label(form.plainPassword.second, NULL, {'label_attr': {'class': 'label-login'}}) }}
+        {{ form_widget(form.plainPassword.second, {'attr': {'class': 'main-login', 'placeholder': 'Confirmation'}}) }}
+
+        {{ form_rest(form) }}
+
+        <div>
+            <input type="submit" value="{{ 'registration.submit'|trans }}" class="main-sub"/>
+        </div>
+
+    </form>
+
+     </div>
+
+    <div id="signin-right">
+        <h2 class="title">Bon à savoir</h2>
+            <p class="infos">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aut dolores eius laboriosam modi molestias nemo quo quos repellendus sunt?
+                Ab incidunt, libero minima molestias perferendis quas quod sint vero.
+            </p>
+            <p class="infos-why">Voici des raisons d'utiliser BadgeBox :</p>
+            <ul>
+                <li class="signin-reason">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                <li class="signin-reason">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                <li class="signin-reason">Ab incidunt, libero minima molestias perferendis quas quod sint vero.</li>
+                <li class="signin-reason">Aperiam aut dolores eius laboriosam modi molestias nemo </li>
+                <li class="signin-reason">Et bien d'autres que vous découvrirez. </li>
+            </ul>
+        <p class="infos-sign">L'équipe BadgeBox</p>
+        <div class="clear"></div>
     </div>
-</form>
+
+    <div class="clear"></div>
+
+</div>

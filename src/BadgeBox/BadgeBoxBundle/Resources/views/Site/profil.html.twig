@@ -2,41 +2,72 @@
     <div id="profil-box-head">
 
         <div id="profil-box-avatar">
-            <img src="{{ asset('bundles/badgebox/images/Avatars/world-burn.jpg') }}" alt="User Avatar" class="profil-avatar"/>
+            <img src="{{ asset('bundles/badgebox/images/Avatars/') }}{{ app.user.avatar }}" alt="User Avatar" class="profil-avatar"/>
         </div>
         <div id="profil-box-infos">
             <h3 class="username"><a href="{{ path('fos_user_profile_edit') }}" class="link">
                 {{ app.user.username }}</a></h3>
-            <p class="username">Christophe Gautier</p>
-            <p>Points: 2000  <span>Follower: 1</span></p>
+            <p class="username">{{ app.user.firstname }} {{ app.user.name }}</p>
+            <p>Points: {{ app.user.points }}</p>
+            <p>Follower: 1</p>
         </div>
         <div id="profil-box-infos-opt">
             <span class="opt">
                 <img src="{{ asset('bundles/badgebox/images/ico/mail@2x.png') }}" alt="Icones" class="profil-ico"/>
                 <a href="{{ path('fos_user_security_logout') }}" class="link">Déconnexion</a></span>
             <span class="opt">
-                <img src="{{ asset('bundles/badgebox/images/ico/synchronize@2x.png') }}" alt="Icones" class="profil-ico"/>Suivre</span>
+                <img src="{{ asset('bundles/badgebox/images/ico/synchronize@2x.png') }}" alt="Icones" class="profil-ico"/>
+                <a href="{{ path('fos_user_profile_edit') }}" class="link">Profil</a></span>
         </div>
 
         <div id="profil-box-message">
-            <h4>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, aut eius eligendi eos excepturi expedita fugiat
-                ipsam molestiae nemo
-                odio officiis quibusdam reiciendis, veritatis. Doloribus eveniet labore quaerat quos totam? "</h4>
+            <h4>
+                "
+                {% if(app.user.description != NULL ) %}
+                {{ app.user.description }}
+
+                {% else %}
+
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cum facere molestias qui quisquam. Aspernatur consectetur eligendi fugit magnam nam.
+
+                "
+                {% endif %}</h4>
         </div>
 
         <div id="profil-box-post">
-            <input type="text" class="profil-post" placeholder="Ecrire un nouveau message" >
-            <input type="submit" value="Publier" class="profil-sub"/>
+            {% render(controller('BadgeBoxBundle:Site:Post')) %}
         </div>
 
         <div id="profil-box-social">
             <ul class="social-list">
                 <li class="list">
-                    <img src="{{ asset('bundles/badgebox/images/facebook.png') }}" alt="facebook"  class="social"/><span class="answer">http://www.social.com</span></li>
+                    <img src="{{ asset('bundles/badgebox/images/facebook.png') }}" alt="facebook"  class="social"/>
+                    <span class="answer">
+                        {% if ( app.user.facebook != NULL ) %}
+                            <a href="{{ app.user.facebook }}" class="link">Mon Facebook</a>
+                        {% else %}
+                        Non renseigné
+                         {% endif %}
+                    </span></li>
                 <li class="list">
-                    <img src="{{ asset('bundles/badgebox/images/twitter.png') }}" alt="twitter" class="social"/><span class="answer">http://www.social.com</span></li>
+                    <img src="{{ asset('bundles/badgebox/images/twitter.png') }}" alt="twitter" class="social"/>
+                    <span class="answer">
+                        {% if ( app.user.twitter != NULL ) %}
+                            <a href="{{ app.user.twitter }}" class="link">Mon Twitter</a>
+                        {% else %}
+                            Non renseigné
+                        {% endif %}
+                    </span></li>
                 <li class="list">
-                    <img src="{{ asset('bundles/badgebox/images/googleplus.png') }}" alt="google+" class="social"/><span class="answer">http://www.social.com</span></li>
+                    <img src="{{ asset('bundles/badgebox/images/googleplus.png') }}" alt="google+" class="social"/>
+                    <span class="answer">
+                        {% if ( app.user.googleplus != NULL ) %}
+                        <a href="{{ app.user.googleplus }}" class="link">Mon Google+</a>
+                    {% else %}
+                        Non renseigné
+                        {% endif %}
+                    </span></li>
             </ul>
         </div>
 

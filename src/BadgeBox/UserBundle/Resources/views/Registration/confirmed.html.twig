@@ -7,11 +7,6 @@
 
     <h1 id="reg_ok">{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</h1>
 
-    {% if app.session is not empty %}
-        {% set targetUrl = app.session.get('_security.' ~ app.security.token.providerKey ~ '.target_path') %}
-        {% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>{% endif %}
-    {% endif %}
-
     </div>
 
     <div id="reg_quit_box">

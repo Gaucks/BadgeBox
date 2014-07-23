@@ -1,0 +1,60 @@
+{% extends ('::base_neutre.html.twig') %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block content %}
+
+    {% if error %}
+        <div class="error">{{ error|trans }}</div>
+    {% endif %}
+<div id="user-login">
+
+    <div class="user-login-left">
+        <h2 class="title">Identification</h2>
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+            <div>
+                <label for="username" class="label-login"> {{ 'security.login.username'|trans }}</label>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="main-login"/>
+            </div>
+
+            <div>
+                <label for="password" class="label-login">{{ 'security.login.password'|trans }}</label>
+                <input type="password" id="password" name="_password" required="required" class="main-login" />
+            </div>
+
+            <div>
+                <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" class="main-sub" />
+            </div>
+
+            <div>
+                <label for="remember_me" class="label-login-check">{{ 'security.login.remember_me'|trans }}</label>
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" class="main-check" />
+            </div>
+        </form>
+        <div>
+            <a href="{{ path('fos_user_resetting_request') }}" class="link">Mot de passe oublié ?</a>
+        </div>
+    </div>
+    <div class="user-login-right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolores mollitia quisquam
+            repellendus voluptatibus. Ab adipisci aspernatur eaque explicabo impedit
+            libero, nostrum rerum sapiente sit veniam. Exercitationem labore molestiae officiis.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolores mollitia quisquam
+            repellendus voluptatibus. Ab adipisci aspernatur eaque explicabo impedit
+            libero, nostrum rerum sapiente sit veniam. Exercitationem labore molestiae officiis.</p>
+
+    </div>
+    <div class="user-login-center">
+        <h2 class="title">Essayez c'est gratuit</h2>
+
+        <a href="{{ path('fos_user_registration_register') }}" class="link">
+            <input type="button" class="main-button" value="Devenez membre" />
+            </a>
+    </div>
+    <div class="clear"></div>
+
+</div>
+{% endblock content %}
+
+

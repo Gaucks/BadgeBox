@@ -1,14 +1,31 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
-    <div>
-        {% if invalid_username is defined %}
-            <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</p>
-        {% endif %}
-        <label for="username">{{ 'resetting.request.username'|trans }}</label>
-        <input type="text" id="username" name="username" required="required" />
+<div id="user-login">
+
+    <div id="signin-left">
+        <h2 class="title">Mot de passe oublié</h2>
+
+    <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+        <div>
+            {% if invalid_username is defined %}
+                <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</p>
+            {% endif %}
+            <label for="username">{{ 'resetting.request.username'|trans }}</label>
+            <input type="text" id="username" name="username" required="required" class="main-login"/>
+        </div>
+        <div>
+            <input type="submit" value="{{ 'resetting.request.submit'|trans }}" class="main-sub"/>
+        </div>
+    </form>
+
+        </div>
+
+    <div id="signin-right">
+        <h2 class="title">Mot de passe oublié</h2>
+        <p class="infos">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad aperiam assumenda at deserunt dolor ducimus esse est, fuga maiores,
+            mollitia numquam odit optio praesentium qui quos repellendus reprehenderit tenetur!</p>
     </div>
-    <div>
-        <input type="submit" value="{{ 'resetting.request.submit'|trans }}" />
-    </div>
-</form>
+
+    <div class="clear"></div>
+
+</div>

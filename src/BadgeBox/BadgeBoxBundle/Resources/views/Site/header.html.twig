@@ -1,12 +1,23 @@
 <div id="header">
     <div id="header-box">
        <div id="header-box-ct">
-           <a href="{{ path('badge_box_homepage') }}"><h1 id="title">Badge<span id="white-title">Box</span></h1> </a></div>
+           <a href="{{ path('badge_box_homepage') }}"><h1 id="title">Badge<span id="white-title">Box</span></h1> </a>
+       </div>
+        {% if is_granted('ROLE_USER') %}
+        <div id="header-box-menu">
+            <ul>
+                <li class="menu"><a href="{{ path('badge_box_homepage') }}" class="link">Accueil</a></li>
+                <li class="menu"><a href="{{ path('fos_user_profile_edit') }}" class="link">Profil</a></li>
+                <li class="menu"><a href="{{ path('badge_box_home') }}" class="link">{{ app.user.username }}</a></li>
+            </ul>
+        </div>
+        {% endif %}
 
         <div id="connect">
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <img src="{{ asset('bundles/badgebox/images/new-post.png') }}" alt="avatar" id="new-post">
-            Nouveaux challenges disponibles !
+            <p class="infos">Nouveaux challenges disponibles !</p>
+
         {% else %}
             <div id="head-connect">
                 {{ render(controller('UserBundle:Security:LoginBis')) }}

@@ -3,14 +3,20 @@
         <div id="menu-box-head">
 
             <div id="menu-box-avatar">
-                <img src="{{ asset('bundles/badgebox/images/Avatars/world-burn.jpg') }}" alt="User Avatar" class="profil-avatar"/>
+                <img src="{{ asset('bundles/badgebox/images/Avatars/') }}{{ app.user.avatar }}" alt="User Avatar" class="profil-avatar"/>
             </div>
 
             <div id="menu-box-infos">
                 <h3 class="username"><a href="{{ path('badge_box_home') }}" class="link">
                         {{ app.user.username }}</a></h3>
-                <p class="username">Christophe Gautier</p>
+                <p class="username">{{ app.user.firstname }} {{ app.user.name }}</p>
                 <p>Points: 2000  <span>Follower: 1</span></p>
+            </div>
+
+            <div id="menu-box-infos-opt">
+            <span class="opt">
+                <img src="{{ asset('bundles/badgebox/images/ico/mail@2x.png') }}" alt="Icones" class="profil-ico"/>
+                <a href="{{ path('fos_user_security_logout') }}" class="link">Déconnexion</a></span>
             </div>
 
             <div id="menu-box-menu">
@@ -30,6 +36,12 @@
                     <a href="{{ path('fos_user_profile_edit') }}"  class="link">
                         <li class="user-menu">
                             <img src="{{ asset('bundles/badgebox/images/ico/user-diploma@2x.png') }}" alt="icone" class="ico-menu"/>Epreuves
+                        </li>
+                    </a>
+
+                    <a href="{{ path('fos_user_security_logout') }}"  class="link">
+                        <li class="user-menu">
+                            <img src="{{ asset('bundles/badgebox/images/ico/stop-sign@2x.png') }}" alt="icone" class="ico-menu"/>Supprimer mon compte
                         </li>
                     </a>
                 </ul>

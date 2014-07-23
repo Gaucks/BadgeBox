@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets filter='cssrewrite' 'bundles/badgebox/css/challenge.css'%}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {%  endstylesheets %}
+
+{% endblock stylesheets %}
+
+{% block content %}
+    {% include 'BadgeBoxBundle:Challenge:challenge_content.html.twig' %}
+{% endblock content %}
