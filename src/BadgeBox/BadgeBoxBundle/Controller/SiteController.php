@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Request;
 use BadgeBox\BadgeBoxBundle\Form\Handler\PostHandler;
 use BadgeBox\BadgeBoxBundle\Form\PostType;
 
-
 class SiteController extends Controller
 {
     public function indexAction()

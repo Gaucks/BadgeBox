@@ -23,6 +23,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 
+
 /**
  * Controller managing the registration
  *
@@ -57,8 +58,10 @@ class RegistrationController extends ContainerAware
             $form->bind($request);
 
             if ($form->isValid()) {
+
                 $event = new FormEvent($form, $request);
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
+
 
                 $userManager->updateUser($user);
 
@@ -66,6 +69,10 @@ class RegistrationController extends ContainerAware
                     $url = $this->container->get('router')->generate('fos_user_registration_confirmed');
                     $response = new RedirectResponse($url);
                 }
+
+                /*  MA PROPRE METHOD POUR INITILIZER*/
+                $initialisateur = $this->container->get('badge_box.initChallenge');
+                $initialisateur->Init($user);
 
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
 
@@ -152,7 +159,7 @@ class RegistrationController extends ContainerAware
     }
 
     /**
-    * Fonction ajouté par moi meme
+    * Fonction ajouté par moi meme page d'accueil
     */
 
     public function registerBisAction(Request $request)
@@ -192,6 +199,10 @@ class RegistrationController extends ContainerAware
                 }
 
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
+
+                /*  MA PROPRE METHOD POUR INITILIZER*/
+                $initialisateur = $this->container->get('badge_box.initChallenge');
+                $initialisateur->Init($user);
 
                 return $response;
             }

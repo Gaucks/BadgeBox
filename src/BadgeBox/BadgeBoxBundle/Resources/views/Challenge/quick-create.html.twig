@@ -26,9 +26,9 @@
     <div class="achievement-box">
         {% for c in challenges %}
             <a href="{{ path('badge_box_challenge',{'id': c.id } )}}" class="link">
-        <div class="achievement-box-img">
+            <div class="achievement-box-img">
             <img src="{{ asset('bundles/badgebox/images/achievements/world-class-achievement.png') }}"  alt="logo" class="logo"/>
-            <h4>{{ c.title }}</h4>
+            <h4 {% if (c.valid) %}  class="valid" {% endif %}> {{ c.challenge.title }}</h4>
         </div>
             </a>
         {% endfor %}

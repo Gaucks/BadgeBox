@@ -1,0 +1,4 @@
+services:
+    badge_box.initChallenge:
+        class: BadgeBox\UserBundle\Services\InitChallenge
+        arguments: [ @doctrine ]

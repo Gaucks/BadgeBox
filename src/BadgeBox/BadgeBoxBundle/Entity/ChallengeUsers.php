@@ -8,13 +8,13 @@ use Doctrine\ORM\Mapping as ORM;
  * Challenge_users
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="BadgeBox\BadgeBoxBundle\Entity\Challenge_usersRepository")
+ * @ORM\Entity(repositoryClass="BadgeBox\BadgeBoxBundle\Entity\ChallengeUsersRepository")
  */
-class Challenge_users
+class ChallengeUsers
 {
 
     /**
-     * @ORM\OneToOne(targetEntity="BadgeBox\UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="BadgeBox\UserBundle\Entity\User")
      */
     private $user;
 

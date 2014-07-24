@@ -234,4 +234,142 @@ class Challenge
     {
         return $this->user;
     }
+
+    /**
+     * Set points
+     *
+     * @param string $points
+     * @return Challenge
+     */
+    public function setPoints($points)
+    {
+        $this->points = $points;
+
+        return $this;
+    }
+
+    /**
+     * Get points
+     *
+     * @return string 
+     */
+    public function getPoints()
+    {
+        return $this->points;
+    }
+
+    /**
+     * Set participants
+     *
+     * @param string $participants
+     * @return Challenge
+     */
+    public function setParticipants($participants)
+    {
+        $this->participants = $participants;
+
+        return $this;
+    }
+
+    /**
+     * Get participants
+     *
+     * @return string 
+     */
+    public function getParticipants()
+    {
+        return $this->participants;
+    }
+
+    /**
+     * Set reussit
+     *
+     * @param string $reussit
+     * @return Challenge
+     */
+    public function setReussit($reussit)
+    {
+        $this->reussit = $reussit;
+
+        return $this;
+    }
+
+    /**
+     * Get reussit
+     *
+     * @return string 
+     */
+    public function getReussit()
+    {
+        return $this->reussit;
+    }
+
+    /**
+     * Set echec
+     *
+     * @param string $echec
+     * @return Challenge
+     */
+    public function setEchec($echec)
+    {
+        $this->echec = $echec;
+
+        return $this;
+    }
+
+    /**
+     * Get echec
+     *
+     * @return string 
+     */
+    public function getEchec()
+    {
+        return $this->echec;
+    }
+
+    /**
+     * Set stop
+     *
+     * @param \DateTime $stop
+     * @return Challenge
+     */
+    public function setStop($stop)
+    {
+        $this->stop = $stop;
+
+        return $this;
+    }
+
+    /**
+     * Get stop
+     *
+     * @return \DateTime 
+     */
+    public function getStop()
+    {
+        return $this->stop;
+    }
+
+    /**
+     * Set enabled
+     *
+     * @param boolean $enabled
+     * @return Challenge
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Get enabled
+     *
+     * @return boolean 
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
+    }
 }

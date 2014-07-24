@@ -234,6 +234,14 @@ hr.create{
 .achievement-box-img  h4{
     font-weight: bold;
     font-size: 0.9em;
+    color:#f06c57;
+}
+
+.achievement-box-img  h4.valid{
+    color: #6b9311;
+    font-weight: bold;
+    font-size: 0.9em;
+    font-style: oblique;
 }
 
 /* Fin de la partie superieur du contenu

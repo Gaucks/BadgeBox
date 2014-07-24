@@ -9,8 +9,6 @@ use BadgeBox\BadgeBoxBundle\Entity\Challenge;
 use BadgeBox\BadgeBoxBundle\Form\ChallengeType;
 use BadgeBox\BadgeBoxBundle\Form\Handler\ChallengeHandler;
 
-use BadgeBox\BadgeBoxBundle\Entity\Post;
-
 class ChallengeController extends Controller {
 
     public function quickCreateAction(Request $request)
@@ -39,9 +37,9 @@ class ChallengeController extends Controller {
             return $this->redirect(($this->generateUrl('badge_box_home')));
         }
 
-        $challenges = $entityManager->getRepository('BadgeBoxBundle:Challenge')->findBy(array('user' => $user),
-                                                                                        array('date' => 'DESC'),
-                                                                                        6);
+        $challenges = $entityManager->getRepository('BadgeBoxBundle:ChallengeUsers')->findBy(array('user' => $user),
+                                                                              array('date' => 'DESC'),
+                                                                                    6);
 
         return $this->render('BadgeBoxBundle:Challenge:quick-create.html.twig', array('form' => $form->createView(), 'challenges' => $challenges ));
     }
@@ -57,7 +55,7 @@ class ChallengeController extends Controller {
 
         if(!$challenge)
         {
-            throw new \RuntimeException('Le challenge"'.$id.'" n\'existe pas');
+            throw $this->createNotFoundException('Le challenge"'.$id.'" n\'existe pas');
         }
 
         return $this->render('BadgeBoxBundle:Challenge:challenge.html.twig', array('challenge' => $challenge));
